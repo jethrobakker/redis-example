@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<configuration>
+	<property resource="demo.properties" />
+
+	<appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.dir}/redis-example.log</file>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.dir}/demo-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>100MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory>9</maxHistory>
+		</rollingPolicy>
+	</appender>
+
+	<logger name="nl.flusso.bigdata" level="INFO"/>
+	<logger name="org.apache" level="WARN"/>
+
+	<root level="INFO">
+		<appender-ref ref="file"/>
+	</root>
+</configuration>
