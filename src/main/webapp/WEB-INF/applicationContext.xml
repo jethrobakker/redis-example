@@ -18,5 +18,10 @@
 
 	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
 		<property name="connectionFactory" ref="jedisConnectionFactory"/>
+		<property name="valueSerializer" ref="redisJsonSerializer"/>
+	</bean>
+
+	<bean id="redisJsonSerializer" class="org.springframework.data.redis.serializer.JacksonJsonRedisSerializer">
+		<constructor-arg type="java.lang.Class" value="nl.flusso.bigdata.redisexample.Task"/>
 	</bean>
 </beans>

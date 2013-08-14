@@ -26,22 +26,22 @@ public class TaskList {
 		@XmlElement
 		private Long id;
 		@XmlElement
-		private String json;
+		private Task task;
 
 		TaskItem() {
 		}
 
-		TaskItem(Long id, String json) {
+		TaskItem(Long id, Task task) {
 			this.id = id;
-			this.json = json;
+			this.task = task;
 		}
 
 		Long getId() {
 			return id;
 		}
 
-		String getJson() {
-			return json;
+		Task getTask() {
+			return task;
 		}
 	}
 }
