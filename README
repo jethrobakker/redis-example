@@ -1,1 +1,2 @@
-This file was created by IntelliJ IDEA 12.1.4 for binding GitHub repository
+This is an example to show how to store JSON messages in a Redis key-value store.
+It depends on RestEasy, Spring and Jedis.
