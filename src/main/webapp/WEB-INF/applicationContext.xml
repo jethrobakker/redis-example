@@ -22,6 +22,6 @@
 	</bean>
 
 	<bean id="redisJsonSerializer" class="org.springframework.data.redis.serializer.JacksonJsonRedisSerializer">
-		<constructor-arg type="java.lang.Class" value="nl.flusso.bigdata.redisexample.Task"/>
+		<constructor-arg type="java.lang.Class" value="org.codehaus.jackson.JsonNode"/>
 	</bean>
 </beans>
